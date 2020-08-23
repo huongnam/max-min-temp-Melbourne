@@ -58,6 +58,7 @@ if __name__ == "__main__":
     # create header
     with open('data/melbourne.18_08_2020.22_08_2020.csv', 'a') as f:
         f.write('date,time,temp,wind,humidity,barometer\n')
+
     # create Weather objects according to given days
     weather_list = [Weather(i) for i in range(20200818, 20200823)]
     for weather in weather_list:
@@ -66,6 +67,7 @@ if __name__ == "__main__":
 
     # load data frame from data/melbourne.18_08_2020.22_08_2020.csv
     df = pd.read_csv('data/melbourne.18_08_2020.22_08_2020.csv')
+    
     # compute max temperature for each day
     list_max_temps = compute_max_temp(df)
     print('Max temp for each day: {}'.format(
